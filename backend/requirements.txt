@@ -1,2 +1,6 @@
 fastapi
-uvicornpython-dotenv 
+uvicorn
+python-dotenv
+requests
+huggingface_hub
+Pillow
