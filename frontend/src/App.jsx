@@ -57,14 +57,13 @@ const [dots, setDots] = useState("");
     setActiveItem(null);
     const fullPrompt = prompt + ", " + selectedStyle.value;
     try {
-      const response = await fetch("http://localhost:8000/generate", {
-        method: "POST",
+     const response = await fetch("https://ai-image-studio-o37m.onrender.com/generate", {        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: fullPrompt }),
       });
       const data = await response.json();
       if (data.image_url) {
-        const url = data.image_url + "?t=" + Date.now();
+        const url = "https://ai-image-studio-o37m.onrender.com/image?t=" + Date.now();
         setImageUrl(url);
         const newItem = { id: Date.now(), prompt, style: selectedStyle.label, emoji: selectedStyle.emoji, url };
         setHistory(prev => {
