@@ -12,7 +12,11 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://ai-image-studio-nu.vercel.app",
+        "https://ai-image-studio-f2vyjljza-nandita1366s-projects.vercel.app"
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
